@@ -1094,10 +1094,8 @@ input, select, textarea { font-family: inherit; }
   display: flex;
   align-items: center;
   gap: 6px;
-
   padding: 10px 14px;
   border-radius: var(--r-sm);
-
   color: #fff;
   font-size: 0.9rem;
   font-weight: 500;

@@ -1,0 +1,132 @@
+# ==========================
+# Dependencies
+# ==========================
+node_modules/
+.pnp
+.pnp.js
+
+# Yarn                          ← Ye rakho (dusre projects ke liye)
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
+# pnpm                          ← YE ADD KARO
+.pnpm-store/
+pnpm-debug.log*
+# Note: pnpm-lock.yaml COMMIT karo — ignore mat karo!
+
+# npm
+package-lock.json               ← YE ADD KARO (pnpm use kar rahe ho)
+
+# ==========================
+# Environment Variables
+# ==========================
+.env
+.env.*
+!.env.example
+
+# ==========================
+# Next.js
+# ==========================
+.next/
+out/
+build/
+
+# ==========================
+# TypeScript
+# ==========================
+*.tsbuildinfo
+next-env.d.ts
+
+# ==========================
+# Logs
+# ==========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==========================
+# Coverage
+# ==========================
+coverage/
+.nyc_output/
+
+# ==========================
+# Playwright
+# ==========================
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# ==========================
+# Database
+# ==========================
+*.sqlite
+*.sqlite3
+*.db
+
+# ==========================
+# Uploads / Media
+# ==========================
+media/
+uploads/
+
+# ==========================
+# Docker
+# ==========================
+.docker/
+docker-data/
+
+# ==========================
+# IDE
+# ==========================
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+.idea/
+*.iml
+
+# ==========================
+# OS Files
+# ==========================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==========================
+# Vercel
+# ==========================
+.vercel/
+
+# ==========================
+# Turborepo
+# ==========================
+.turbo/
+
+# ==========================
+# Cache
+# ==========================
+.cache/
+.parcel-cache/
+.eslintcache
+
+# ==========================
+# Secrets
+# ==========================
+*.pem
+*.key
+*.crt
+*.p12
+
+# ==========================
+# Temporary
+# ==========================
+tmp/
+temp/

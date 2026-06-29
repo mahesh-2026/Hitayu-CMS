@@ -7,9 +7,6 @@ const __filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(__filename)
 
 const nextConfig: NextConfig = {
-  // ADD THIS LINE FOR AWS AMPLIFY SSR SUPPORT
-  output: 'standalone',
-  
   serverExternalPackages: ['cloudinary'],
   images: {
     // Keep your local patterns
@@ -51,3 +48,4 @@ const nextConfig: NextConfig = {
 }
 
 export default withPayload(nextConfig, { devBundleServerPackages: false })
+  

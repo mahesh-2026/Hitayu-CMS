@@ -7,9 +7,8 @@ const __filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(__filename)
 
 const nextConfig: NextConfig = {
-  serverExternalPackages: ['cloudinary'],
+  serverExternalPackages: ['cloudinary', 'sharp'], 
   images: {
-    // Keep your local patterns
     localPatterns: [
       {
         pathname: '/api/media/file/**',
@@ -21,7 +20,6 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
-    // Allow all external domains
     remotePatterns: [
       {
         protocol: 'https',
@@ -32,7 +30,6 @@ const nextConfig: NextConfig = {
         hostname: '**',
       },
     ],
-    
   },
   webpack: (webpackConfig) => {
     webpackConfig.resolve.extensionAlias = {
@@ -48,4 +45,3 @@ const nextConfig: NextConfig = {
 }
 
 export default withPayload(nextConfig, { devBundleServerPackages: false })
-  

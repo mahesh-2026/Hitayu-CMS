@@ -6,7 +6,7 @@
   "type": "module",
   "packageManager": "pnpm@9.0.0",
   "scripts": {
-    "build": "cross-env NODE_OPTIONS=\"--no-deprecation --max-old-space-size=8000\" next build",
+    "build": "cross-env NODE_OPTIONS=\"--no-deprecation --max-old-space-size=8000\" next build --webpack",
     "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
     "dev:webpack": "cross-env NODE_OPTIONS=--no-deprecation next dev --webpack",
     "dev:local": "docker compose up postgres -d --wait && cross-env NODE_OPTIONS=--no-deprecation next dev",
@@ -34,6 +34,7 @@
     "@vercel/blob": "^0.27.0",
     "cloudinary": "^2.10.0",
     "cross-env": "^7.0.3",
+    "detect-libc": "^2.1.2",
     "dotenv": "16.4.7",
     "graphql": "^16.8.1",
     "lucide-react": "^1.17.0",
@@ -64,6 +65,13 @@
     "vite-tsconfig-paths": "6.0.5",
     "vitest": "4.0.18"
   },
+ "pnpm": {
+  "supportedArchitectures": {
+    "os": ["current", "linux"],
+    "cpu": ["x64"],
+    "libc": ["glibc"]
+  }
+},
   "engines": {
     "node": "^18.20.2 || >=20.9.0"
   }

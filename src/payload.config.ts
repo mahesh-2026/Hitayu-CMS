@@ -38,7 +38,14 @@ const cleanDbUrl = rawDbUrl
   .replace(/[?&]$/, '')
 const needsSSL = rawDbUrl.includes('neon.tech') || rawDbUrl.includes('sslmode=')
 
+// Public server URL — comes from env per-environment (Amplify domain in prod,
+// http://localhost:3000 in local dev). Never hardcode a host below.
+const serverURL = process.env.NEXT_PUBLIC_SERVER_URL || ''
+
 export default buildConfig({
+  serverURL,
+  cors: serverURL ? [serverURL] : [],
+  csrf: serverURL ? [serverURL] : [],
   admin: {
     user: Users.slug,
     importMap: {

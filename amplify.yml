@@ -1,0 +1,24 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - corepack enable
+        - pnpm install --frozen-lockfile
+    build:
+      commands:
+        # CRITICAL: Amplify injects env vars at BUILD time but NOT into the SSR
+        # runtime (Lambda). Without this line, DATABASE_URL/PAYLOAD_SECRET are
+        # undefined at runtime -> "error initializing Payload" -> /admin 500.
+        # This writes the server-side vars into .env.production so Next.js/Payload
+        # can read them at runtime.
+        - env | grep -E '^(DATABASE_URL|PAYLOAD_SECRET|NEXT_PUBLIC_SERVER_URL|CLOUDINARY_CLOUD_NAME|CLOUDINARY_API_KEY|CLOUDINARY_API_SECRET|BLOB_READ_WRITE_TOKEN|SMTP_HOST|SMTP_PORT|SMTP_USER|SMTP_PASS)=' >> .env.production
+        - pnpm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+      - .next/cache/**/*

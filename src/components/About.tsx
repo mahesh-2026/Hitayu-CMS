@@ -10,7 +10,10 @@ export default async function About() {
   const description =
     a?.description ||
     'At Hitayu, we specialize in delivering impactful technology solutions that enable businesses to grow and thrive. Our experience in supporting organizations across various sectors allows us to craft solutions that are both innovative and results oriented.'
-  const imageSrc = a?.image?.url || a?.imageUrl || 'https://demo.web-glaze.com/108/wp-content/uploads/2026/06/new-header.png'
+  const imageSrc =
+    a?.image?.url ||
+    a?.imageUrl ||
+    'https://res.cloudinary.com/ryg9bkkz/image/upload/v1782805193/hitayu/s3v3djty8ufbtmiksvx8.png'
   const badge1Title = a?.badge1Title || 'Award Winning'
   const badge1Sub = a?.badge1Sub || 'Best IT Partner 2024'
   const badge2Title = a?.badge2Title || 'ISO 27001'
@@ -54,7 +57,12 @@ export default async function About() {
                 alt="Hitayu"
                 width={450}
                 height={800}
-                style={{ objectFit: 'cover', objectPosition: 'left center', width: '100%', height: 'auto' }}
+                style={{
+                  objectFit: 'cover',
+                  objectPosition: 'left center',
+                  width: '100%',
+                  height: 'auto',
+                }}
                 priority
               />
             </div>

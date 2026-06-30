@@ -14,7 +14,9 @@ export default async function Footer() {
           <div className="ht-fbrand">
             <a href="/" className="ht-logo">
               <Image
-                src={"https://demo.web-glaze.com/108/wp-content/uploads/2026/06/hitayus-logo-new.png"}
+                src={
+                  'https://res.cloudinary.com/ryg9bkkz/image/upload/v1782803837/hitayu/ytcme7wxdmqf6grhgroe.png'
+                }
                 alt="Hitayu"
                 width={350}
                 height={170}
@@ -35,8 +37,17 @@ export default async function Footer() {
           <div className="ht-fcol">
             <h5>Services</h5>
             <ul>
-              {['Managed Services', 'Infrastructure Modernisation', 'Data, Analytics & AI', 'Managed Security', 'App Modernisation', 'Cloud Cost Optimisation'].map((s) => (
-                <li key={s}><a href="#services">{s}</a></li>
+              {[
+                'Managed Services',
+                'Infrastructure Modernisation',
+                'Data, Analytics & AI',
+                'Managed Security',
+                'App Modernisation',
+                'Cloud Cost Optimisation',
+              ].map((s) => (
+                <li key={s}>
+                  <a href="#services">{s}</a>
+                </li>
               ))}
             </ul>
           </div>
@@ -45,8 +56,17 @@ export default async function Footer() {
           <div className="ht-fcol">
             <h5>Solutions</h5>
             <ul>
-              {['SMB-in-a-Box', 'Web Hosting Kit', 'DR Jumpstart', 'Backup Kit', 'Database Starter', 'BI Solution Kit'].map((s) => (
-                <li key={s}><a href="#solutions">{s}</a></li>
+              {[
+                'SMB-in-a-Box',
+                'Web Hosting Kit',
+                'DR Jumpstart',
+                'Backup Kit',
+                'Database Starter',
+                'BI Solution Kit',
+              ].map((s) => (
+                <li key={s}>
+                  <a href="#solutions">{s}</a>
+                </li>
               ))}
             </ul>
           </div>
@@ -55,12 +75,24 @@ export default async function Footer() {
           <div className="ht-fcol">
             <h5>Company</h5>
             <ul>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#careers">Careers</a></li>
-              <li><a href="#partners">Partners</a></li>
-              <li><a href="#industries">Industries</a></li>
-              <li><a href="#contact">Contact Us</a></li>
-              <li><a href="#">Privacy Policy</a></li>
+              <li>
+                <a href="#about">About Us</a>
+              </li>
+              <li>
+                <a href="#careers">Careers</a>
+              </li>
+              <li>
+                <a href="#partners">Partners</a>
+              </li>
+              <li>
+                <a href="#industries">Industries</a>
+              </li>
+              <li>
+                <a href="#contact">Contact Us</a>
+              </li>
+              <li>
+                <a href="#">Privacy Policy</a>
+              </li>
             </ul>
           </div>
         </div>

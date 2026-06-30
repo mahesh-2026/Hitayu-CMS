@@ -2491,7 +2491,7 @@
           "type": "varchar",
           "primaryKey": false,
           "notNull": false,
-          "default": "'https://demo.web-glaze.com/108/wp-content/uploads/2026/06/new-header.png'"
+          "default": "'https://res.cloudinary.com/ryg9bkkz/image/upload/v1782805193/hitayu/s3v3djty8ufbtmiksvx8.png'"
         },
         "about_page_image_id": {
           "name": "about_page_image_id",

@@ -57,9 +57,9 @@ export default async function Solutions() {
                   <h3>{s.title}</h3>
                 </div>
               </div>
-              <div className="ht-sol-body">
+              {/* <div className="ht-sol-body">
                 <p>{s.desc}</p>
-              </div>
+              </div> */}
             </Link>
           ))}
         </div>

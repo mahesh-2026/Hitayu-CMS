@@ -9,7 +9,7 @@ const defaultServices = [
   { icon: 'fas fa-dollar-sign', title: 'Cloud Cost Optimisation', description: 'Intelligent FinOps strategies rightsizing, reserved instances, idle resource elimination, budget governance, and continuous monitoring to minimize cloud expenditure while maximizing performance.' },
 ]
 
-export default async function ServicesSection() {
+export default async function   ServicesSection() {
   const services = await getServices()
 
   const display =
@@ -32,16 +32,16 @@ export default async function ServicesSection() {
               End to End <span className="hi">Technology</span> Solutions<br />That Drive Real Outcomes
             </h2>
           </div>
-          <a href="/services" className="ht-btn ht-btn-od ht-reveal ht-d2">
+          {/* <a href="/services" className="ht-btn ht-btn-od ht-reveal ht-d2">
             All Services <i className="fas fa-arrow-right" />
-          </a>
+          </a> */}
         </div>
         <div className="ht-svc-grid">
           {display.slice(0, 6).map((s: any, i: number) => (
             <div key={i} className={`ht-scard ht-reveal ht-d${(i % 3) + 1}`}>
               <div className="ht-sico"><i className={s.icon} /></div>
               <h3>{s.title}</h3>
-              <p>{s.description}</p>
+              {/* <p>{s.description}</p> */}
               <a href={s.url || '#contact'} className="ht-slink">
                 Learn More <i className="fas fa-arrow-right" />
               </a>

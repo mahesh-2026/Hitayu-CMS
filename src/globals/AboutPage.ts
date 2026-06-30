@@ -2,7 +2,7 @@ import type { GlobalConfig } from 'payload'
 
 export const AboutPageGlobal: GlobalConfig = {
   slug: 'about-page',
-  label: '🏢 About Us Page',
+  label: 'About Us Page',
   fields: [
     { name: 'eyebrow', type: 'text', defaultValue: 'About Hitayu' },
     { name: 'titleLine1', type: 'text', label: 'Title (line 1)', defaultValue: 'Reimagine, digitize, and realize better' },
@@ -17,7 +17,7 @@ export const AboutPageGlobal: GlobalConfig = {
       name: 'imageUrl',
       type: 'text',
       label: 'Section Image URL',
-      defaultValue: 'https://demo.web-glaze.com/108/wp-content/uploads/2026/06/new-header.png',
+      defaultValue: 'https://res.cloudinary.com/ryg9bkkz/image/upload/v1782805193/hitayu/s3v3djty8ufbtmiksvx8.png',
     },
     {
       name: 'image',

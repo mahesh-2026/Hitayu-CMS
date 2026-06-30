@@ -6,7 +6,7 @@ export default async function Navbar() {
   const settings = await getSiteSettings()
 
   const logoUrl =
-    'https://demo.web-glaze.com/108/wp-content/uploads/2026/06/hitayus-logo-new.png'
+    'https://res.cloudinary.com/ryg9bkkz/image/upload/v1782803837/hitayu/ytcme7wxdmqf6grhgroe.png'
 
   return (
     <>

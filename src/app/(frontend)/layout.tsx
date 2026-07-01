@@ -54,9 +54,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
 
         {/* Back to top */}
-        <button id="ht-btt" aria-label="Back to top">
+        {/* <button id="ht-btt" aria-label="Back to top">
           <i className="fas fa-arrow-up" />
-        </button>
+        </button> */}
       </body>
     </html>
   )

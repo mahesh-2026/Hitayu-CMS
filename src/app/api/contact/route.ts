@@ -15,13 +15,13 @@ export async function POST(req: Request) {
       },
     })
 
-    await transporter.sendMail({
+    const info = await transporter.sendMail({
       from: process.env.SMTP_USER,
       to: process.env.MAIL_TO,
-      subject: `Contact Form - ${name}`,
-      replyTo: email,
-      text: `Name: ${name} Email: ${email} Message: ${message}`,
+      subject: 'Test Email',
+      text: 'Hello from Next.js',
     })
+    console.log(info)
 
     return NextResponse.json({ success: true })
   } catch (error) {

@@ -877,7 +877,7 @@ input, select, textarea { font-family: inherit; }
 .ht-fbl { display: flex; gap: 22px; }
 .ht-fbl a { font-size: 0.77rem; transition: color white; }
 .ht-fbl a:hover { color: var(--cyan); }
-
+`
 /* ══════════════════ BACK TO TOP ══════════════════ */
 #ht-btt {
   position: fixed; bottom: 32px; right: 32px; z-index: 500;

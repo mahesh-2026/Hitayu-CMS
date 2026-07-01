@@ -11,7 +11,9 @@ export default async function AboutHeroSection() {
     a?.description ||
     'At Hitayu, we specialize in delivering impactful technology solutions that enable businesses to grow and thrive. Our experience in supporting organizations across various sectors allows us to craft solutions that are both innovative and results oriented. By partnering with us, you gain access to a dedicated team of skilled professionals committed to bringing your ideas to life with precision and expertise. We take pride in our commitment to quality and customer satisfaction. Every solution we design, develop or deliver is thoroughly tested and refined to meet the highest standards before delivery—ensuring dependable performance and outstanding results for our customers.'
   const imageSrc =
-    a?.image?.url || a?.imageUrl || 'https://demo.web-glaze.com/108/wp-content/uploads/2026/06/about-img.webp'
+    a?.image?.url ||
+    a?.imageUrl ||
+    'https://res.cloudinary.com/ryg9bkkz/image/upload/v1782805193/hitayu/s3v3djty8ufbtmiksvx8.png'
   const badge1Title = a?.badge1Title || 'Award Winning'
   const badge1Sub = a?.badge1Sub || 'Best IT Partner 2024'
   const badge2Title = a?.badge2Title || 'ISO 27001'

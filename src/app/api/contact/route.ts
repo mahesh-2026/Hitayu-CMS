@@ -1,47 +1,31 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { createContactSubmission } from '@/lib/payload-utils'
+import nodemailer from 'nodemailer'
+import { NextResponse } from 'next/server'
 
-export async function POST(req: NextRequest) {
+export async function POST(req: Request) {
   try {
-    const body = await req.json()
-    const { name, email, phone, company, service, message } = body
+    const { name, email, message } = await req.json()
 
-    if (!name || !email || !message) {
-      return NextResponse.json(
-        { success: false, error: 'Name, email, and message are required.' },
-        { status: 400 },
-      )
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { success: false, error: 'Invalid email address.' },
-        { status: 400 },
-      )
-    }
-
-    const ip =
-      req.headers.get('x-forwarded-for')?.split(',')[0] ||
-      req.headers.get('x-real-ip') ||
-      'unknown'
-
-    await createContactSubmission({
-      name: String(name).trim(),
-      email: String(email).trim().toLowerCase(),
-      phone: phone ? String(phone).trim() : undefined,
-      company: company ? String(company).trim() : undefined,
-      service: service || undefined,
-      message: String(message).trim(),
-      ipAddress: ip,
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      secure: false,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
     })
 
-    return NextResponse.json({ success: true, message: 'Thank you! We will be in touch soon.' })
-  } catch (err) {
-    console.error('[contact-api]', err)
-    return NextResponse.json(
-      { success: false, error: 'Something went wrong. Please try again.' },
-      { status: 500 },
-    )
+    await transporter.sendMail({
+      from: process.env.SMTP_USER,
+      to: process.env.MAIL_TO,
+      subject: `Contact Form - ${name}`,
+      replyTo: email,
+      text: `Name: ${name} Email: ${email} Message: ${message}`,
+    })
+
+    return NextResponse.json({ success: true })
+  } catch (error) {
+    console.error(error)
+    return NextResponse.json({ success: false }, { status: 500 })
   }
 }

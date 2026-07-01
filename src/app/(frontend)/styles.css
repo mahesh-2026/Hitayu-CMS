@@ -245,28 +245,14 @@ input, select, textarea { font-family: inherit; }
 
 /* ══════════════════ HERO ══════════════════ */
 .ht-hero {
-  min-height: 100vh; position: relative; overflow: hidden;
+   position: relative; overflow: hidden;
   display: flex; align-items: center; padding-top: 76px;
   background: var(--navy-deep);
-}
-/* Full-page slider mode */
-.ht-hero--full {
-  padding-top: 0;
-  display: block;
-  /* Desktop: fill full visible viewport */
-  height: 100vh;
-  height: 100dvh;
+  aspect-ratio: 19/9;
+  height: auto;
 }
 
-/* Mobile: wrap height to image aspect ratio (1830×860 ≈ 2.13:1) */
-@media (max-width: 767px) {
-  .ht-hero--full {
-    height: 300px;
-    /* aspect-ratio: 1830 / 860; */
-    /* min-height: unset; */
-    max-height: 150vw; 
-  }
-}
+
 .ht-hbg { position: absolute; inset: 0; overflow: hidden; }
 .ht-hbg-grad {
   position: absolute; inset: 0;
@@ -657,7 +643,7 @@ input, select, textarea { font-family: inherit; }
   overflow: hidden; transition: all var(--t);
 }
 .ht-sol-card:hover { border-color: var(--cyan); box-shadow: 0 20px 60px rgba(0,200,232,.12); transform: translateY(-6px); }
-.ht-sol-top { padding: 28px 28px; display: flex; align-items: center; gap: 14px; }
+.ht-sol-top { padding: 28px 28px 0; display: flex; align-items: center; gap: 14px; }
 .ht-sol-ico {
   width: 52px; height: 52px; flex-shrink: 0; border-radius: var(--r-md);
   background: linear-gradient(135deg, rgba(0,200,232,.12), rgba(0,155,181,.18));
@@ -877,7 +863,7 @@ input, select, textarea { font-family: inherit; }
 .ht-fbl { display: flex; gap: 22px; }
 .ht-fbl a { font-size: 0.77rem; transition: color white; }
 .ht-fbl a:hover { color: var(--cyan); }
-`
+
 /* ══════════════════ BACK TO TOP ══════════════════ */
 #ht-btt {
   position: fixed; bottom: 32px; right: 32px; z-index: 500;
@@ -1094,11 +1080,14 @@ input, select, textarea { font-family: inherit; }
   display: flex;
   align-items: center;
   gap: 6px;
+
   padding: 10px 14px;
   border-radius: var(--r-sm);
+
   color: #fff;
   font-size: 0.9rem;
   font-weight: 500;
+
   cursor: pointer;
   transition: all 0.25s ease;
 }

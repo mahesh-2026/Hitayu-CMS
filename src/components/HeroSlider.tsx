@@ -44,14 +44,7 @@ export default function HeroSlider({ slides, fullPage = false }: Props) {
     >
       {slides.map((slide, i) => (
         <div key={i} className={`ht-slide${i === current ? ' active' : ''}`}>
-          <Image
-            src={slide.url}
-            alt={slide.alt}
-            fill
-            sizes="100vw"
-            style={{ objectFit: 'cover', objectPosition: 'left center' }}
-            priority={i === 0}
-          />
+          <img src={slide.url} alt={slide.alt} />
         </div>
       ))}
 

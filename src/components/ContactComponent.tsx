@@ -2,10 +2,7 @@ import { getSiteSettings, getContactPage } from '@/lib/payload-utils'
 import ContactForm from './ContactForm'
 
 export async function ContactComponent() {
-  const [settings, contactPage] = await Promise.all([
-    getSiteSettings(),
-    getContactPage(),
-  ])
+  const [settings, contactPage] = await Promise.all([getSiteSettings(), getContactPage()])
 
   const s = settings as any
   const cp = contactPage as any
@@ -18,10 +15,7 @@ export async function ContactComponent() {
 
   const phone = s?.headerInfo?.phone || s?.contactPhone || '+91 98765 43210'
   const email = s?.headerInfo?.email || s?.contactEmail || 'info@hitayu.com'
-  const hours =
-    cp?.businessHours ||
-    s?.contactPhoneHours ||
-    'Mon–Fri: 9 AM – 6 PM IST'
+  const hours = cp?.businessHours || s?.contactPhoneHours || 'Mon–Fri: 9 AM – 6 PM IST'
 
   const infoItems = [
     { icon: 'fas fa-phone-alt', title: 'Phone', lines: [phone] },
@@ -30,8 +24,7 @@ export async function ContactComponent() {
   ]
 
   const cmsLinks = (settings as any)?.headerInfo?.socialLinks as
-    | { label: string; url: string; icon: string }[]
-    | undefined
+    { label: string; url: string; icon: string }[] | undefined
 
   const socials =
     cmsLinks && cmsLinks.length > 0
@@ -49,11 +42,7 @@ export async function ContactComponent() {
         ]
 
   return (
-    <section
-      className="ht-section"
-      id="contact"
-      style={{ scrollMarginTop: 90 }}
-    >
+    <section className="ht-section" id="contact" style={{ scrollMarginTop: 90 }}>
       <div className="ht-container">
         <div
           className="ht-con-g"
